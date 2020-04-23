@@ -54,8 +54,8 @@ func inputChoose() (choose string, err error) {
 // initCmd represents the init command
 var initCmd = &cobra.Command{
 	Use:   "init",
-	Short: "init ssc",
-	Long:  `init ssc`,
+	Short: "init bmc",
+	Long:  `init bmc`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var err error
 

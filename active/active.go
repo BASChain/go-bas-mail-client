@@ -3,8 +3,8 @@ package active
 import (
 	"encoding/json"
 	"github.com/btcsuite/btcutil/base58"
-	"github.com/kprc/ssactiveclient/config"
-	"github.com/kprc/ssactiveclient/rsakey"
+	"github.com/BASChain/go-bas-mail-client/config"
+	"github.com/BASChain/go-bas-mail-client/rsakey"
 	"github.com/rickeyliao/ServiceAgent/common"
 	"log"
 	"strconv"
@@ -25,7 +25,7 @@ type WhiteListResp struct {
 }
 
 func ActiveVPN() {
-	cfg := config.GetSSCCfg()
+	cfg := config.GetBMCCfg()
 
 	req := &WhiteListReq{}
 

@@ -32,8 +32,8 @@ import (
 // daemonCmd represents the daemon command
 var daemonCmd = &cobra.Command{
 	Use:   "daemon",
-	Short: "ssc start in backend",
-	Long:  `ssc start in backend`,
+	Short: "bmc start in backend",
+	Long:  `bmc start in backend`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		_, err := cmdcommon.IsProcessCanStarted()
@@ -68,9 +68,9 @@ var daemonCmd = &cobra.Command{
 
 		daemondir := config.GetBMCHomeDir()
 		cntxt := daemon.Context{
-			PidFileName: path.Join(daemondir, "ssc.pid"),
+			PidFileName: path.Join(daemondir, "bmc.pid"),
 			PidFilePerm: 0644,
-			LogFileName: path.Join(daemondir, "ssc.log"),
+			LogFileName: path.Join(daemondir, "bmc.log"),
 			LogFilePerm: 0640,
 			WorkDir:     daemondir,
 			Umask:       027,
@@ -81,7 +81,7 @@ var daemonCmd = &cobra.Command{
 			log.Fatal("Unable to run: ", err)
 		}
 		if d != nil {
-			log.Println("ssc starting, please check log at:", path.Join(daemondir, "ssc.log"))
+			log.Println("bmc starting, please check log at:", path.Join(daemondir, "bmc.log"))
 			return
 		}
 		defer cntxt.Release()

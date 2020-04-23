@@ -35,9 +35,9 @@ var (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "ssc",
-	Short: "start ssc in current shell",
-	Long:  `start ssc in current shell`,
+	Use:   "bmc",
+	Short: "start bmc in current shell",
+	Long:  `start bmc in current shell`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		_, err := cmdcommon.IsProcessCanStarted()
